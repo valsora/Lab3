@@ -47,7 +47,10 @@ public class HashTable<K, V> {
         int index = key.hashCode() % length;
         if (table[index] != null) {
             for (Pair<K,V> pair : table[index]) {
-                if (pair.getKey().equals(key)) 
+                if (pair.getKey().equals(key)) {
+                    table[index].remove(pair);
+                    size--;
+                }
             }
         }
     }
