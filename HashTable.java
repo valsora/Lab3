@@ -50,6 +50,7 @@ public class HashTable<K, V> {
                 if (pair.getKey().equals(key)) {
                     table[index].remove(pair);
                     size--;
+                    return;
                 }
             }
         }
